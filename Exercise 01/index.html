@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var name = prompt("Enter your first name and last name:");
+    var firstName =name.substr(0, name.indexOf(" "));
+    alert ("Hello " + firstName);
+    var lastName = name.substr(name.lastIndexOf(" "));
+    var initials = name.charAt(0) + name.charAt(name.lastIndexOf(" ") + 1);
+    alert(initials.toUpperCase() + ", Those are great initials!! Thanks " 
+    + firstName 
+    + " "
+    + lastName)
+    </script>
+</body>
+</html>
