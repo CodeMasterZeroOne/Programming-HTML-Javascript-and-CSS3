@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 03</title>
+    <link href="Exercise 03.02.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <button onclick="hostname()">HOST NAME</button>
+        <label id="hostReply"></label>
+    </div>
+    <br/>
+    <div id="confirmBox">
+        <div class="message"></div>
+        <button class="yes">Yes I am</button>
+        <button class="no">No I'm not</button>
+    </div>
+        <button onclick='confirmationBox("Are you human?", function yes()
+        {
+            document.getElementById("confirmationAnswer").innerHTML = 
+            "Congratz you are a human!";
+        }, function no()
+        {
+            document.getElementById("confirmationAnswer").innerHTML = 
+            "Dance for me monkey boy!"
+        });'>CONFIRMATION BOX</button>
+        <label id="confirmationAnswer"></label>
+    </div>
+    <br/>
+    <br/>
+    <div>
+        <button onclick="promptBox()">PROMPT BOX</button>
+        <label id="userAnswer"></label>
+    </div>
+    <br/>
+    <div>
+        <button onclick="switchStatement()">SWITCH STATEMENT</button>
+        <label id="userChoice"></label>
+    </div>
+    <br/>
+        <script src="jquery.js"></script>
+        <script src="Exercise 03.01.js"></script> 
+        <script src="Exercise 03.02.js"></script> 
+        <script src="Exercise 03.03.js"></script> 
+        <script src="Exercise 03.04.js"></script>
+    </script>
+</body>
+</html>
