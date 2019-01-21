@@ -1,0 +1,71 @@
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+
+}
+
+nav{
+    height: 1.5em;
+    background-color: aquamarine;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /*width: 200px;*/
+    background-color: #f1f1f1;
+  }
+  
+li a {
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+nav li{
+    display: inline;
+}
+  
+/* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
+  }
+  /* Canvas and SVG setup */
+  #newCanvas{
+    border:1px solid #000000;
+    width: 400px;
+    height: 150px;
+  }
+  #newSVG{
+    border:1px solid #000000;
+    width: 400px;
+    height: 150px;
+  }
+section{
+    background-color: cadetblue;
+    color: white;
+}
+article{
+    padding: 10px;
+    margin: 10px;
+    background-color: darkcyan;
+    color: white;
+
+}
+aside{
+    padding: 10px;
+    margin: 10px;
+    background-color: dodgerblue;
+    color: white;
+}
+footer{
+    background-color: darkblue;
+    margin: 10px;
+    color: white;
+}
+
+#video{
+    margin: 10px;
+    height: 240px;
+    width: 320px;
+}
