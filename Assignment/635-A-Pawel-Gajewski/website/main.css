@@ -1,14 +1,14 @@
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 16px;
-
+    font-size: 18px;
+    color: white;
 }
 
 nav{
     height: 1.5em;
     background-color: aquamarine;
 }
-ul {
+ol {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -32,40 +32,63 @@ li a:hover {
   }
   /* Canvas and SVG setup */
   #newCanvas{
-    border:1px solid #000000;
+    border:1px solid white;
     width: 400px;
     height: 150px;
   }
   #newSVG{
-    border:1px solid #000000;
+    border:1px solid white;
     width: 400px;
     height: 150px;
   }
+  form{
+      margin: 10px;
+      text-align: center;
+  }
 section{
-    background-color: cadetblue;
-    color: white;
+    background-color: transparent;
 }
 article{
+    min-height: 80vh; /* this makes sure that the article  section is at 80% of web page */
     padding: 10px;
     margin: 10px;
-    background-color: darkcyan;
-    color: white;
+    background-color: transparent;
 
 }
 aside{
     padding: 10px;
     margin: 10px;
-    background-color: dodgerblue;
-    color: white;
+    background-color: transparent;
 }
 footer{
-    background-color: darkblue;
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    bottom: 0;
     margin: 10px;
-    color: white;
+    text-align: center;
 }
 
 #video{
-    margin: 10px;
-    height: 240px;
-    width: 320px;
+    position: fixed;
+    z-index: -1;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
 }
+/* Animation with css*/
+#gangham {width: 225px; height: 400px;
+    background-image: url(Images/sprite.png);
+    animation: gangham 4s steps(23,start) infinite,
+      movearound 12s steps(69,end) infinite alternate 44ms;
+    animation-direction: normal, alternate;
+  }
+  @keyframes gangham {
+    0% {background-position: 0 0}
+    100% {background-position: -5175px 0}
+  }
+  @keyframes movearound {
+    0% {transform: translatex(0)}
+    100% {transform: translatex(600px);}
+  }

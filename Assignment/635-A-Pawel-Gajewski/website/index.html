@@ -14,7 +14,7 @@
     <header>
         <!--/.Navbar-->
         <nav>
-            <ul class="nav navbar-nav">
+            <ol class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <!-- goes to page where the form is-->
                 <li><a href="form.html">Web Form</a></li>
@@ -22,29 +22,34 @@
                 <li><a href="xmlRequest.html">XML Http Request</a></li>
                 <!-- goest to page where SVG and Canvas is-->
                 <li><a href="svgCanvas.html">SVG &amp; Canvas</a></li>
-            </ul>
+            </ol>
         </nav>
+        <h2>Primary focus of this project is on web development not on web design.</h2>
+        <h3>Learn HTML5 JavaScript &amp; CSS3</h3>
     </header>
-    <!--<img src="Images/bgimage.jpeg">-->
     <video id="video" autoplay loop muted>
-            <source src="Video/Spedometer.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <source src="Video/Spedometer.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <section>
         <label id="userName"></label>
     </section>
-    <article>Primary focus of this project is on web development not on web design.</article>
     <aside>
-            <p>Click the button to get your coordinates.</p>
+        <p>Click the button to get your coordinates.</p>
+        <button onclick="getLocation()">Geolocation</button>
+        <p id="geolocationDemo"></p><br><br>
 
-            <button onclick="getLocation()">Geolocation</button>
-            
-            <p id="geolocationDemo"></p>
+        <iframe id="map" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-5px9IvD9XjxTBh5EpJwYRp4XC7zaMTg&q=Space+Needle,Seattle+WA"
+            allowfullscreen>
+        </iframe>
     </aside>
-    <footer>FOOTER Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem aperiam qui corporis odit nam
-        provident illo voluptatem deserunt fugit, impedit repudiandae ipsum modi facere mollitia laboriosam ad. Dicta,
-        quam hic.</footer>
+    <article></article>
+    <footer>
+        <p id="copyright"></p>FOOTER - This is where you can put copy rights and company name and year.<br />
+        <!--use ascii copyright symbol to properly render-->
+        &copy; Pawel Gajewski 2019</p>
+    </footer>
 
     <!-- tell HTML where to find main.js -->
     <script src="main.js" type="text/javascript"></script>
