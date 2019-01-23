@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ajax Typing Challenge</title>
+	<script type="text/javascript" src="scripts/ajax_typing_challenge.js"></script>
+</head>
+<body>
+    <H1 style = "color:blue">Ajax Typing Test</H1>
+    <FORM>    
+      <P>Click on "Begin Test" when you are ready to begin and then 
+      type the sentences that are displayed in the text fields
+      displayed below each sentence. When done, click on the "Grade
+       Test" button.</P>
+      <INPUT type = "button" value = "Begin Test" id = "btnControl1" onclick = startQuiz()>
+      <INPUT type = "button" value = "Grade Test" id = "btnControl2" onclick = gradeQuiz()>
+      <P><DIV id = "trgtDiv1"> </DIV></P>
+      <INPUT type = "textfield" size = "100" id = "inputField1">
+      <P><DIV id = "trgtDiv2"> </DIV></P>
+      <INPUT type = "textfield" size = "100" id = "inputField2">
+      <P><DIV id = "trgtDiv3"> </DIV></P>
+      <INPUT type = "textfield" size = "100" id = "inputField3">
+    </FORM>
+    <P style = "color:red; font-weight:Bold" id = "trgtP"> </P>
+</body>
+</html>

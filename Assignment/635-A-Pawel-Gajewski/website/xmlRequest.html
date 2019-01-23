@@ -28,10 +28,53 @@
     <video id="video" autoplay loop muted>
         <source src="Video/Spedometer.mp4" type="video/mp4">
         Your browser does not support the video tag.
-      </video>
-      <article></article>
-      <footer>
-          <p id="copyright"></p>FOOTER - This is where you can put copy rights and company name and year.<br />
+    </video>
+    <article>
+        <h1>The XMLHttpRequest Object</h1>
+	<p>
+		XMLHttpRequest (XHR) is a JavaScript API to create AJAX requests.<br />
+		Its methods provide the ability to send network requests between<br />
+		the browser and a server.<br />
+		<a href="https://developer.mozilla.org/en-US/docs/Glossary/XHR_(XMLHttpRequest)" target="_blank">Learn more.</a><br />
+	</p>
+
+	<p>
+		NOTE: Microsoft IE and Chrome do not support running <br/>
+		XMLHttpRequest locally (i.e. not using a server),<br />
+		therefore use Firefox or Microsoft Edge.<br />		
+	</p>
+
+	<h4 id="fileText">Let AJAX change this text when clicking the button.</h4>
+
+	<button type="button" onclick="loadDoc()">Change Content</button>
+
+	<script>
+	    // test this feature using Firefox (preferred option)
+		// it may also be tested using Microsoft Edge
+	    function loadDoc() {
+		    // create a new XMLHttpRequest object
+		    var xhttp = new XMLHttpRequest();
+            // define the function to be called when the readyState property changes
+			xhttp.onreadystatechange = function() {
+				// readyState 4 => request finished and response is ready
+				if (xhttp.readyState == 4) {
+				    // status 200 => successful HTTP requests
+				    if (xhttp.status == 200) {
+					    // responseText => returns the response data as a string
+						document.getElementById("fileText").innerHTML = xhttp.responseText;
+					}
+				}
+			};
+			var fileName = 'info.txt'; // using local file to read the text from it(Note: works in firefox)
+			//var fileName = 'https://www.w3.org/TR/PNG/iso_8859-1.txt';
+			//var fileName = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=EUR';
+			xhttp.open('GET', fileName, true);
+			xhttp.send(null);
+		}
+	</script>
+    </article>
+    <footer>
+        <p id="copyright"></p>FOOTER - This is where you can put copy rights and company name and year.<br />
         <!--use ascii copyright symbol to properly render-->
         &copy; Pawel Gajewski 2019</p>
     </footer>

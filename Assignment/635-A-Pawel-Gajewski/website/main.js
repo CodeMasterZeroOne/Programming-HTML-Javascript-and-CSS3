@@ -1,22 +1,28 @@
-var userName;
+
 var x = document.getElementById("geolocationDemo");
-var map = document.getElementById("map");
+var map, infoWindow;
+var globalUser;
 window.onload = drawRectangle();
 
-function getSetUserName() {
+function onLoad() {
+  var url = window.location.pathname;
+  var filename = url.substring(url.lastIndexOf('/') + 1);
+  if (filename === 'index.html') {
+    getLocation();
+  }
+  else if (filename === 'svgCanvas.html') {
+    drawRectangle();
+  }
 }
 
 function drawRectangle() {
   var c = document.getElementById('newCanvas');
-  var ctx = c.getContext('2d');
-  ctx.fillStyle = '#7cce2b';
-  ctx.fillRect(20, 20, 150, 80);
+  if (c) {
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#7cce2b';
+    ctx.fillRect(20, 20, 150, 80);
+  }
 }
-function something() {
-
-  document.getElementById("labelUser").innerHTML = "Paweeeeee";
-}
-
 
 function getLocation() {
   if (navigator.geolocation) {
@@ -29,55 +35,16 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML = "Your Latitude: " + position.coords.latitude +
     " and Longitude: " + position.coords.longitude + " check on this map. :)";
-    // var pos = {
-    //   lat: position.coords.latitude,
-    //   lng: position.coords.longitude
-    // };
 
-    // map.setPosition(pos)
-    // map.setCenter(pos);
-    // map = new google.maps.Map(document.getElementById('map'), {
-    //       center: {lat: -34.397, lng: 150.644},
-    //       zoom: 6
-    // src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-5px9IvD9XjxTBh5EpJwYRp4XC7zaMTg&q=Space+Needle,Seattle+WA"
-}
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 6
-  });
-  infoWindow = new google.maps.InfoWindow;
+  var pos = position.coords.latitude + "," + position.coords.longitude;
 
-  // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
+  var mapsrc = "https://www.google.com/maps/embed/v1/place?q=" + pos + "&key=AIzaSyA-5px9IvD9XjxTBh5EpJwYRp4XC7zaMTg";
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
-      infoWindow.open(map);
-      map.setCenter(pos);
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-  }
+
+  document.getElementById("map").src = mapsrc;
 }
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-  infoWindow.open(map);
-}
-
-//  function for web form
+//  function for web form "add item"
 function addItemToList() {
   var list = document.querySelector('ul');
   var input = document.querySelector('input');
@@ -86,11 +53,15 @@ function addItemToList() {
   var listItem = document.createElement('li');
   var listText = document.createElement('span');
   var listBtn = document.createElement('button');
-  listItem.style.padding = "10px";
+  list.style.width = "50%";
+  //list.style.margin = "0 auto";
+  listText.style.paddingRight = "20px"; // styling span created 
+  listItem.style.padding = "10px"; // styling list item created
   listItem.appendChild(listText);
   listText.textContent = myItem;
   listItem.appendChild(listBtn);
-  listBtn.textContent = 'Delete';
+  listBtn.style.cssFloat = "right";
+  listBtn.textContent = 'Remove';
   list.appendChild(listItem);
   listBtn.onclick = function (e) {
     list.removeChild(listItem);

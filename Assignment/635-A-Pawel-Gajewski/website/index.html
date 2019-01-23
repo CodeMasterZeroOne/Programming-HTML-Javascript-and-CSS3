@@ -27,6 +27,7 @@
         <h2>Primary focus of this project is on web development not on web design.</h2>
         <h3>Learn HTML5 JavaScript &amp; CSS3</h3>
     </header>
+    <!-- video -->
     <video id="video" autoplay loop muted>
         <source src="Video/Spedometer.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -35,13 +36,13 @@
     <section>
         <label id="userName"></label>
     </section>
+    <!-- get user location and display it on map using google API-->
     <aside>
         <p>Click the button to get your coordinates.</p>
         <button onclick="getLocation()">Geolocation</button>
         <p id="geolocationDemo"></p><br><br>
 
-        <iframe id="map" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA-5px9IvD9XjxTBh5EpJwYRp4XC7zaMTg&q=Space+Needle,Seattle+WA"
-            allowfullscreen>
+        <iframe id="map" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
         </iframe>
     </aside>
     <article></article>
@@ -53,6 +54,7 @@
 
     <!-- tell HTML where to find main.js -->
     <script src="main.js" type="text/javascript"></script>
+
 </body>
 
 </html>

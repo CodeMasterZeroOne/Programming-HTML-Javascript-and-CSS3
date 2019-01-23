@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1>The XMLHttpRequest Object</h1>
+	
+	<p>
+		XMLHttpRequest (XHR) is a JavaScript API to create AJAX requests.<br />
+		Its methods provide the ability to send network requests between<br />
+		the browser and a server.<br />
+		<a href="https://developer.mozilla.org/en-US/docs/Glossary/XHR_(XMLHttpRequest)" target="_blank">Learn more.</a><br />
+	</p>
+
+	<p>
+		NOTE: Microsoft IE and Chrome do not support running <br/>
+		XMLHttpRequest locally (i.e. not using a server),<br />
+		therefore use Firefox or Microsoft Edge.<br />		
+	</p>
+
+	<p id="demo">Let AJAX change this text.</p>
+
+	<button type="button" onclick="loadDoc()">Change Content</button>
+
+	<script>
+	    // test this feature using Firefox (preferred option)
+		// it may also be tested using Microsoft Edge
+	    function loadDoc() {
+		    // create a new XMLHttpRequest object
+		    var xhttp = new XMLHttpRequest();
+            // define the function to be called when the readyState property changes
+			xhttp.onreadystatechange = function() {
+				// readyState 4 => request finished and response is ready
+				if (xhttp.readyState == 4) {
+				    // status 200 => successful HTTP requests
+				    if (xhttp.status == 200) {
+					    // responseText => returns the response data as a string
+						document.getElementById("demo").innerHTML = xhttp.responseText;
+					}
+				}
+			};
+			//var fileName = 'file:///C:/Web/XMLHttpRequest/info.txt';
+			//var fileName = 'https://www.w3.org/TR/PNG/iso_8859-1.txt';
+			var fileName = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=EUR';
+			xhttp.open('GET', fileName, true);
+			xhttp.send(null);
+		}
+	</script>
+
+	<!--
+		checkout the following for examples of usage:
+		https://www.w3schools.com/xml/xml_http.asp
+		https://min-api.cryptocompare.com/documentation
+		
+		reference sites:
+		https://javascript.info/xmlhttprequest
+	-->
+
+</body>
+</html>
