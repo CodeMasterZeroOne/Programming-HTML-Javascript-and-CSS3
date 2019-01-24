@@ -2,7 +2,7 @@
 var x = document.getElementById("geolocationDemo");
 var map, infoWindow;
 var globalUser;
-window.onload = drawRectangle();
+window.onload = onLoad(); 
 
 function onLoad() {
   var url = window.location.pathname;
@@ -13,6 +13,9 @@ function onLoad() {
   else if (filename === 'svgCanvas.html') {
     drawRectangle();
   }
+  else if (filename === 'form.html') {
+    hideContent();
+  }
 }
 
 function drawRectangle() {
@@ -22,6 +25,20 @@ function drawRectangle() {
     ctx.fillStyle = '#7cce2b';
     ctx.fillRect(20, 20, 150, 80);
   }
+}
+
+function doCoolStuff() {
+  var userName = document.getElementById("inputName").value;
+  var userSurname = document.getElementById("inputSurname").value;
+  var helloContent = document.getElementById("hideContent");
+  document.getElementById("userName").innerHTML = userName + " !";
+  document.getElementById("userSurname").innerHTML = userSurname + " !";
+  helloContent.style.visibility = "visible";
+}
+
+function hideContent() {
+  var helloContent = document.getElementById("hideContent");
+  helloContent.style.visibility = "hidden";
 }
 
 function getLocation() {
