@@ -2,13 +2,15 @@
 var x = document.getElementById("geolocationDemo");
 var map, infoWindow;
 var globalUser;
+var usersBrowser;
 window.onload = onLoad(); 
 
 function onLoad() {
   var url = window.location.pathname;
   var filename = url.substring(url.lastIndexOf('/') + 1);
+  browserDetect();
   if (filename === 'index.html') {
-    getLocation();
+    //getLocation();
   }
   else if (filename === 'svgCanvas.html') {
     drawRectangle();
@@ -31,8 +33,8 @@ function doCoolStuff() {
   var userName = document.getElementById("inputName").value;
   var userSurname = document.getElementById("inputSurname").value;
   var helloContent = document.getElementById("hideContent");
-  document.getElementById("userName").innerHTML = userName + " !";
-  document.getElementById("userSurname").innerHTML = userSurname + " !";
+  document.getElementById("userName").innerHTML = "  " + userName + " !";
+  document.getElementById("userSurname").innerHTML = "  " + userSurname + " !";
   helloContent.style.visibility = "visible";
 }
 
@@ -60,28 +62,35 @@ function showPosition(position) {
 
   document.getElementById("map").src = mapsrc;
 }
-
-//  function for web form "add item"
-function addItemToList() {
-  var list = document.querySelector('ul');
-  var input = document.querySelector('input');
-  var myItem = input.value;
-  input.value = '';
-  var listItem = document.createElement('li');
-  var listText = document.createElement('span');
-  var listBtn = document.createElement('button');
-  list.style.width = "50%";
-  //list.style.margin = "0 auto";
-  listText.style.paddingRight = "20px"; // styling span created 
-  listItem.style.padding = "10px"; // styling list item created
-  listItem.appendChild(listText);
-  listText.textContent = myItem;
-  listItem.appendChild(listBtn);
-  listBtn.style.cssFloat = "right";
-  listBtn.textContent = 'Remove';
-  list.appendChild(listItem);
-  listBtn.onclick = function (e) {
-    list.removeChild(listItem);
-  }
-  input.focus();
-}
+/* Detect which browser */
+function browserDetect() { 
+  if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
+ {
+     //alert('Opera');
+     usersBrowser = 'Opera';
+ }
+ else if(navigator.userAgent.indexOf("Chrome") != -1 )
+ {
+     //alert('Chrome');
+     usersBrowser = 'Chrome';
+ }
+ else if(navigator.userAgent.indexOf("Safari") != -1)
+ {
+     //alert('Safari');
+     usersBrowser = 'Safari';
+ }
+ else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
+ {
+      //alert('Firefox');
+      usersBrowser = 'Firefox';
+ }
+ else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+ {
+   //alert('IE'); 
+   usersBrowser = 'IE';
+ }  
+ else 
+ {
+    alert('unknown');
+ }
+ }

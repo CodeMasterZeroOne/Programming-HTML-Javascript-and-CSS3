@@ -66,9 +66,13 @@
 					}
 				}
 			};
-			var fileName = 'info.txt'; // using local file to read the text from it(Note: works in firefox)
-			//var fileName = 'https://www.w3.org/TR/PNG/iso_8859-1.txt';
-			//var fileName = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=EUR';
+			if (usersBrowser === 'Firefox') {
+				var fileName = 'info.txt'; // using local file to read the text from it(Note: works in firefox)
+			}
+			else{
+				var fileName = 'https://www.poemist.com/api/v1/';
+				//var fileName = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=EUR';
+			}
 			xhttp.open('GET', fileName, true);
 			xhttp.send(null);
 		}

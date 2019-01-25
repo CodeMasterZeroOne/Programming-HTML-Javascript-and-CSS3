@@ -1,6 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- 7. Support offline applications -->
+<html lang="en" manifest="/cache.manifest">
 
+<!-- 1. Create HTML5 web pages using HTML5 elements and attributes and CCS3
+style sheets -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -155,7 +158,7 @@
  Extend objects-->
         <button onclick="getLocation()">Geolocation</button><br/>
         <label id="geolocationDemo"></label><br>
-        <iframe id="map" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+        <iframe id="map" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen>
         </iframe>
     </aside>
     <footer>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Web Worker Example - Prime Numbers</title>	
+	<script type="text/javascript" src="scripts/prime.js"></script>
+</head>
+<body>
+	<h1>Worker Example - Prime Numbers</h1>
+	<p>Have you ever wondered what the 20th prime number is?<br />
+	   Or, the 73rd prime number? Or the 664,579th prime number?<br />
+	</p>
+	<p>Well wonder no longer, just enter the number in the box below,<br />
+	   click the button, and, in an instance you will be shown <br />
+	   the prime number at that position.</p>
+	<label for="prime">Prime number position: </label>
+	<input type="text" id="prime" value="0">
+	<button onclick="get_prime()">Get the Prime</button>
+	<p id="result">The prime number is: </p>
+
+	<script>
+		// get a reference to the "prime number" label
+		var ref_prime = document.getElementById("prime");
+		var ref_result = document.getElementById("result");
+
+
+		// create a new worker - the constructor takes the
+		// URI of a script to execute in the worker thread
+		var worker = new Worker('scripts/prime.js');	
+
+		function get_prime() {
+			// send a message to the Web Worker
+			worker.postMessage(ref_prime.value);
+			//console.log("Post to the Web Worker: " + ref_prime.value);
+		}
+
+		// this Web Worker will capture and respond to the
+		// message returned by (sent back from) the Web Worker
+		worker.onmessage = function(e) {
+			result.textContent = "The prime number is: " + e.data;
+			//console.log("Message returned by the Web Worker: " + e.data);
+		}
+	</script>
+
+</body>
+</html>
