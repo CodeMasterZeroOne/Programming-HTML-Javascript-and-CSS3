@@ -19,14 +19,14 @@
                 <!-- goes to page where the form is-->
                 <li><a href="form.html">Web Form</a></li>
                 <!-- goest to page where xml request is-->
-                <li class="active"><a href="#">XML Http Request</a></li>
+                <li class="active"><a href="">XML Http Request</a></li>
                 <!-- goest to page where SVG and Canvas is-->
-                <li><a href="svgCanvas.html">SVG &amp; Canvas</a></li>
+                <li><a href="svgc.html">SVG &amp; Canvas</a></li>
             </ol>
         </nav>
     </header>
     <video id="video" autoplay loop muted>
-        <source src="Video/Spedometer.mp4" type="video/mp4">
+        <source src="video/spedometer.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <article>
@@ -70,7 +70,7 @@
 				var fileName = 'info.txt'; // using local file to read the text from it(Note: works in firefox)
 			}
 			else{
-				var fileName = 'https://www.poemist.com/api/v1/';
+				var fileName = 'https://data.smartdublin.ie/cgi-bin/rtpi/realtimebusinformation?stopid=7602&format=xml';
 				//var fileName = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=EUR';
 			}
 			xhttp.open('GET', fileName, true);

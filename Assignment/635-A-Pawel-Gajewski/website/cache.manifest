@@ -1,15 +1,20 @@
 CACHE MANIFEST
 NETWORK:
-/Images/sprite.png
+./images/sprite.png
+./xmlrequest.html
+
 CACHE:
-/Video/fire.mp4
-/Video/Spedometer.mp4
-/index.html
-/form.html
-/info.txt
-/main.css
-/main.js
-/svgCanvas.html
-/xmlRequest.html
+./images/offline.jpg
+./offline.html
+./main.css
+./main.js
+./video/fire.mp4
+./video/spedometer.mp4
+./info.txt
+./index.html
+./svgc.html
+
 FALLBACK:
-/offline.html
+./form.html ./offline.html
+./xmlrequest.html ./offline.html
+./images/lorem.jpg ./images/offline.jpg
