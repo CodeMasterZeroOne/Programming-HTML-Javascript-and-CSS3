@@ -59,6 +59,7 @@
 		<button onclick="stop()">Stop worker</button>
 
 		<!-- 11. Use the Web Sockets Application Programming Interface with JavaScript to send and receive real time communications data -->
+		
 		<h1>Web Sockets ...in action!</h1>
 		<div id="sse">
 			<p id="socketOutput"></p>
@@ -104,7 +105,7 @@
 			</p>
 		</section>
 
-		<!-- 12. Create, run and monitor a Web Worker process NOTE: workert only works in FireFox-->
+		<!-- 12. Create, run and monitor a Web Worker process -->
 		<script>
 			function sayHI() {
 				worker.postMessage({ 'cmd': 'start', 'msg': 'Hi' });
