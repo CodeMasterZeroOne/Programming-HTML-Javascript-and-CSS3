@@ -287,21 +287,68 @@
             animi sint sunt iste quaerat ad ex ab fugit officia quis magni. Suscipit vero debitis ut, nemo voluptas
             quas. Et mollitia, exercitationem optio impedit ipsum quasi ipsa eum. Ea optio cum cumque fuga sapiente
             facilis!</p>
-        <p id="contact">This is contact: Atque voluptatum asperiores, expedita consequatur ab iure ea voluptas, cupiditate aliquam veritatis minus!
-            Assumenda ea omnis quod a iste nisi hic veniam ab inventore consequatur reprehenderit, laboriosam,
-            asperiores atque pariatur magni quidem eligendi ut. Pariatur assumenda qui, voluptates reprehenderit
-            incidunt laborum fugit delectus illum debitis nulla dolorum similique dolore, repudiandae in id impedit
-            voluptatem magni temporibus corrupti minus tenetur ducimus iure praesentium sequi. Dolorem consectetur
-            suscipit, quibusdam voluptatem quaerat, fugit rerum repellat molestiae nobis repudiandae laborum eligendi,
-            accusantium adipisci quos cumque reiciendis doloribus nesciunt! Numquam maiores fuga quas. Quod rerum ab
-            perferendis magni harum officia, eos commodi! Suscipit magni atque sapiente eaque possimus et!
-            Voluptatibus, est rem. Commodi molestiae aperiam quis vero unde debitis aspernatur similique rerum nam
-            iusto eaque, voluptates aliquam quasi saepe. Ipsa tempora soluta harum ea sequi tenetur veritatis illo.
-            Voluptate non eligendi porro fuga expedita eum! Ea aperiam, fuga soluta molestias velit enim, ratione
-            maiores nulla nobis quia nam alias voluptatibus illo doloribus rerum asperiores quos officia placeat
-            voluptatum minus dolorem? Earum iusto reiciendis qui repellendus delectus! Aut fugit mollitia voluptatibus
-            nam, amet veritatis ipsam dolore eaque repellendus repellat iste voluptas laboriosam id vel porro illum
-            nisi quibusdam officia adipisci harum explicabo laborum soluta. Aspernatur, vel!</p>
+        <p id="contact">
+            <div class="container">
+
+                <div class="row">
+            
+                  <div class="col-lg-8 col-lg-offset-2">
+            
+                    
+                    <form id="contact-form" method="post" action="" role="form">
+            
+                    <div class="messages"></div>
+            
+                    <div class="controls">
+            
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="form_name">Firstname *</label>
+                            <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="form_email">Email *</label>
+                            <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="form_subject">Subject</label>
+                            <input id="form_subject" type="text" name="subject" class="form-control" placeholder="Subject">
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="form_message">Message *</label>
+                            <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required data-error="Please,leave us a message."></textarea>
+                            <div class="help-block with-errors"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <input type="submit" class="btn btn-success btn-send" value="Send message">
+                        </div>
+                      </div>
+                     
+                    </div>
+            
+                    </form>
+            
+                  </div>
+            
+                </div>
+            
+              </div>
+        </p>
 
     </main>
 
